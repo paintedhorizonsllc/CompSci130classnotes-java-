@@ -1,0 +1,91 @@
+package Lecturepart2;
+import java.util.Scanner;
+public class DataStructure {
+
+	static Scanner input = new Scanner (System.in);
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+/*
+	//create an array named AA that can store up to 10 integers
+		int[] AA = new int[10];
+	//create an array named BB that can store up to 5 doubles 
+		double[] BB = new double[5];
+	//create an array named CC that can store up to 7 characters
+		char[] CC = new char [7];
+	//write  statement that stores a value 20 in the first spot of AA
+		AA[0] = 20;
+	//write a statement that stores the letter x in the last spot of CC
+		CC[6]='X';
+		
+	//create an array named colors that can hold up to 5 colors  (e.g: black, green, red....)
+		
+		String [] colors = new String[5];
+		//Write a statement that stores Green in the first spot of colors
+		
+		colors[0]="Green";
+		//Write a statement that stores Red in the last spot of colors
+		
+		colors[4]="Red";
+		//Write a statement that stores Black in the second spot of colors
+	
+		colors[1]="Black";
+		//Write a statement that replaces the value in the last spot with White
+		colors[4]="White";
+		
+		///Note: each array has an attribute called length that represents the size of the array
+		//Write a statement that displays the size of the array colors
+		
+	System.out.printf("The size of the array colors is %d\n", colors.length);
+		
+	
+		//write a statement that displays the color that is stored in the last spot of the array colors
+	System.out.print(colors[4]);
+	//or
+	System.out.printf("the last color in our array is %s\n", colors[4]);
+	System.out.printf("the last color in our array is %s\n", colors[4]);
+	//let us try to access an invalid index
+	//System.out.print(colors[7]);//makes a RUN TIME ERROR out of bound or invalid index
+	*/
+	
+	//create an array named studentNames that stores the following names: Mary, Noah, Joe, JOhn
+	//and create an array named studentAges that stores the following ages: 17, 20, 19. 21. 20
+		
+		String[ ] studentNames = {"Mary", "Noah", "Joe", "John", "Mark"};
+		int [] studentAges = {17, 20, 19, 21, 20};
+	
+		//display the length of each one:
+		System.out.printf("The length of studentNames = %d\n",   studentNames.length );
+		System.out.printf("The length of studentAges = %d\n",  studentAges.length );
+	
+	//write statement that replacesthe name Mary to Sarah
+		
+		studentNames[0]= "Sarah";
+		
+		//display the last name in our array in the uppercase format
+		
+		System.out.printf("The last name in upper case format is %s\n",  studentNames[3].toUpperCase());
+		
+		//write a statement that computes the total ages and avaerage age oin our studentAges array
+		
+		int totalAge = studentAges[0] + studentAges[1] + studentAges[2] + studentAges[3] + studentAges[4];
+		System.out.printf("the average age in our array is %.2f\n", (double) totalAge / studentNames.length);
+	
+	
+	
+	
+	
+	
+	}//emd main
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}//end class
