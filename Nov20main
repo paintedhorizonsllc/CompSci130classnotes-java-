@@ -1,0 +1,74 @@
+package parallelArrays;
+import java.util.Scanner;
+
+public class Nov20 {
+
+	static Scanner input = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Class lecture - Parallel Arrays
+//Two or more arrays that have the same length (a must)
+//What is the point? The elements @ index i of 1st 2nd, and 3rd array, belong to a single record - the value of a 
+
+//example - object oriented?? the PLU, itemName, and Price - parallel arrays - 
+
+
+
+//Second project - Data arrays - student management system
+		
+		//declare the three arrays of our project
+		String[] names = new String[50]; //50 is the max capacity for this assignment
+		int[] ages = new int [50];
+		double[] gpas = new double[50];
+		int studentCount = 0;
+		
+		int userChoice;
+		//read the first input
+		
+		myLibrary.displayMenu();
+		System.out.print("Enter your choice: ");
+		
+		userChoice = input.nextInt();
+		while (userChoice !=7)
+		{
+			switch (userChoice)
+			{
+			case 1:
+				myLibrary.addSingleStudent(names, ages, gpas, studentCount);
+				studentCount++;//Increment Student count afterward
+				break;
+			case 2:
+				studentCount = myLibrary.AddMultipleStudents(names, ages, gpas, studentCount);
+				break;
+			case 3:
+				myLibrary.DisplayAllStudents(names, ages, gpas, studentCount);
+				studentCount++;
+				break;
+			case 4:
+				myLibrary.FindStudentByName(names, ages, gpas, studentCount);
+				break;
+			case 5:
+				break;
+			case 6:
+				break;
+				default:
+				System.out.println("Invalid option, please try again!");
+				break;
+				
+			
+			}//end switch
+			
+			myLibrary.displayMenu();
+			System.out.print("Enter your choice: ");
+			userChoice = input.nextInt();
+			
+		}//end while
+		
+		System.out.println("Exiting program.  Goodbye");
+		
+		
+		
+	}//end main
+
+}//end class
