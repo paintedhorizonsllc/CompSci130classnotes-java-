@@ -1,0 +1,71 @@
+package Lecture;
+import java.util.Scanner;
+public class NOV13 {
+
+	static Scanner input = new Scanner (System.in);
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	int inputedNumber;
+	System.out.print("Enter a posiytive integer and I'll find it's factorial: ");;
+	inputedNumber = input.nextInt();
+	System.out.printf("%d = %d\n", inputedNumber, factorial(inputedNumber));
+	
+		//calculate the factorial using a for loop
+	int fact = 1;
+	for ( int i = inputedNumber; i >= 1; i--)
+	{
+		fact*= i;
+	}
+	System.out.printf("%d = %d\n", inputedNumber, fact);
+	//try the power method
+	System.out.printf(" 4 to power 5 = %d\n", Power(4, 5));
+	
+	//do the power using a for loop
+	int powerResult = 1;
+	for(int count = 5; count >= 1; count --)
+		{
+			powerResult *= 4;
+		}
+	System.out.printf(" 4 to power 5 = %d\n", powerResult);
+	
+		
+		
+	}//end main
+
+	//Write a recursive methos that returns base to power exponent
+	public static int Power( int base, int exponent)
+	{
+		if ( exponent == 0 )
+		{
+			return 1;
+		}
+		else
+		{
+			return base * Power (base, exponent -1);
+		}
+		
+	}
+
+	
+	
+	
+	
+	//write a recursive method that takes a positive integer as a parameter and then it will compute the factorial of that taken integer
+	
+	public static int factorial (int n)
+	{//start method
+	
+	//stopping section : Base section: an if statement that stop the recursion, otherwise it will go forever.
+		if (n <= 1) 
+		{
+			return 1;
+		}
+	//Recursive Call Section
+		else 
+		{
+			return n * factorial ( n - 1 ); //recursive calling statement
+		}
+	}//end method
+	
+}//end class
