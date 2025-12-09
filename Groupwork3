@@ -1,0 +1,118 @@
+package Groupwork3;
+    import java.util.Scanner;
+    public class Main{
+static String [ ] itemNames = new String[25]; static double [ ][ ] itemInfo = new double[25][5]; public static void main(String[] args) {
+        //
+        Scanner input = new Scanner (System.in);
+ 
+        ProcessCommands();
+        
+      } // end of main
+
+//The Find function takes a name as the parameter. It determines 
+// whether an item with that name is in the itemNames list. If so, 
+// it returns the index of where the item is stored. If there is no // item in the list with that name, it returns -1.
+//params: (String) 
+//----------------------------------------------------------------- 
+
+public static int FindIndexOfItem(String lookUpItem)
+{//start FinIndexOfItem method
+	
+}//end FinIndexOfItem method
+
+//The function reads and processes user’s commands. After reading a 
+// command, the next step is to call the corresponding method for each 
+// command. The method uses switch statements for that.
+//params: (none) 
+//----------------------------------------------------------------- 
+public static ProcessCommands( )
+{//start of ProcessCommands method
+ 
+	String command;
+	command = input.next();
+	while (! (command.equals("Quit")
+	{ // starts of while
+		switch ( command )
+		{
+			case "Add":
+				ProcessAddCommand( ); 
+				break;
+			case "Output":
+				ProcessOutputCommand( ); 
+				break;
+			case "Sell": 
+				ProcessSellCommand( ); 
+				break;
+			case "Display": 
+				ProcessDisplayCommand( ); 
+				break;
+			default:
+				System.out.println("Bad command.");
+				input.nextLine(); //////// skip the rest of the line
+				break;
+		} // end switch
+		
+		command = input.next(); // read the next command
+	} // end while loop
+} // end of method ProcessCommands
+
+//The method processes add commands. It adds a new item into the
+//store’s database. The method reads in the itemName, pOrdered,
+//manufPrice, and sellingPrice. The new item must be added to the end 
+// of the list if an item with that name doesn't already exist. The 
+// name will be a string, while other values are of type double. The 
+// method doesn't need to check this. Note that the method should set 
+// the number of pieces (of an item) in the store as the same as the 
+// number of pieces ordered, and it should set the number of pieces of 
+// the item sold is zero. If the item is already in the list, the
+//method should print an appropriate message.
+//params: (none) 
+//----------------------------------------------------------------- 
+public static ProcessAddCommand( )
+{//start of ProcessAddComment method
+	
+}//end of ProcessAddComment method
+
+//The method processes output commands. The method reads in the
+//itemName and then output the item with that name. The method should 
+// display the item name along with the number of pieces ordered,
+//number of pieces currently in the store, number of pieces sold,
+//manufacturer’s price, and the store’s selling price for the item. 
+// If the item doesn't exist, the method should print an appropriate 
+// message.
+//params: (none) 
+//----------------------------------------------------------------- 
+public static ProcessOutputCommand( )
+{//start of ProcessOutputCommand method
+	
+}//end of ProcessOutputCommand method
+
+//The method processes sell commands. The method reads in the
+//itemName and the number of pieces sold in this command (Transaction) 
+// If the item does exist in the list, the method updates the
+//appropriate counts of the sold item. If the item doesn't exist, the 
+// method should print an appropriate message.
+//params: (none) 
+//-----------------------------------------------------------------
+
+public static ProcessSellCommand( )
+{//start of ProcessSellCommand method
+	
+}//end of ProcessSellCommand method
+
+//The method processes display commands. The method should display a 
+// report of all items in the store and their information in a tabular 
+// format. Also, you should display the total inventory (the total
+//selling value of all of the items currently in the store) and the
+//total number of items (the sum of the number of pieces of all of the 
+// items in the store). For instance, total inventory equals the sum of 
+// (sellingPrice*pInStore) of all of the items currently in the store 
+// params: (none) 
+//----------------------------------------------------------------- 
+public static ProcessDisplayCommand( )
+{//start of ProcessDisplayCommand method
+	
+}//end of ProcessDisplayCommand method
+
+
+}//end class 
