@@ -1,0 +1,105 @@
+package ATM;
+import java.util.Scanner;
+
+public class Assignment1 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Enter your PIN please: ");//Read pin
+        int PIN= input.nextInt();
+        
+        while (PIN >= 1) {//While pin is good do
+            boolean doneProcessing = false; //Set doneProcessingRequest to false
+            
+            while (!doneProcessing) {//While not doneProcessingRequest do
+            	boolean okayToProcess = true;//set okayToProcessRequest to true
+            	System.out.print("\nEnter the amount to be withdrawn: ");
+                int withdrawalAmount = input.nextInt();//Read withdrawAmount
+                int surcharge = 0;
+                int dispenseAmount = withdrawalAmount;
+                if (withdrawalAmount  < 1 || withdrawalAmount  > 500) {//If withdrawAmount is bad then
+                    System.out.println("\nInvalid amount: " + withdrawalAmount  + ".");// Output a message
+                    okayToProcess = false;//set okayToProcessRequest to false
+                } 
+                else if (PIN % 2 == 0 && withdrawalAmount  % 5 != 0) {//Else
+                  
+                    System.out.println("You are a type 2 customer, but the amount you requested was " + withdrawalAmount + ".");
+                    System.out.println("You will be charged $1 for changing your default setting.");// If surcharge is supposed to be imposed then
+                    System.out.print("Do you want to be charged $1? (Y/N) "); //Write a message
+                    char response = input.next().charAt(0);//Read surchargeResponse
+                    if (response == 'y' || response == 'Y') {
+                        surcharge = 1;
+                     	dispenseAmount = withdrawalAmount - 1;
+                    } 
+                    else {//If surchargeResponse is not ('Y' or 'y')
+                        okayToProcess = false;//Set okayToProcessRequest to false
+                    }
+                }
+
+                if (okayToProcess) {// If okayToProcessRequest then
+                    //Do all the steps to process the request
+                    int tens = dispenseAmount  / 10;
+                    int remainder = dispenseAmount  % 10;
+                    int fives = 0;
+                    int ones = 0;
+                    if (remainder >= 5) {
+                        fives = 1;
+                        ones = remainder - 5;
+                    } else {
+                        ones = remainder;
+                    }
+
+                    System.out.println("\nYou requested $" + withdrawalAmount  + ".");
+                    if (surcharge == 1) {
+                        System.out.println("You have been charged $1.");
+                    }
+                    
+                    System.out.println("You are receiving the following bills:");
+                    System.out.println("\tNumber of $10 bills: " + tens);
+                    System.out.println("\tNumber of  $5 bills: " + fives);
+                    System.out.println("\tNumber of  $1 bills: " + ones);
+                    
+                    doneProcessing = true;// Set doneProcessingRequest to true
+                }
+            }
+
+            System.out.print("\nEnter your PIN please: ");//Read pin
+            PIN = input.nextInt();
+        }
+        
+        System.out.println("\nThe program will terminate!");
+        input.close();
+    
+
+/*
+
+Hint use % several time ie: (amount % 5)
+ Read pin
+ While pin is good do
+   Set doneProcessingRequest to false
+   While not doneProcessingRequest do
+     set okayToProcessRequest to true
+     Read withdrawAmount
+     If withdrawAmount is bad then
+       Output a message
+       set okayToProcessRequest to false
+     Else
+       If surcharge is supposed to be imposed then
+         Write a message
+         Read surchargeResponse
+         If surchargeResponse is not ('Y' or 'y')
+           Set okayToProcessRequest to false
+     If okayToProcessRequest then
+       Do all the steps to process the request
+       Set doneProcessingRequest to true
+   Read pin
+ */
+	
+	
+	
+	
+	
+	
+	}//end main
+
+}//end
