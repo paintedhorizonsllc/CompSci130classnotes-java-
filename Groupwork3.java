@@ -81,6 +81,39 @@ public class inventoryCommands{
 	//----------------------------------------------------------------- 
 	public static void ProcessAddCommand( )
 	{//start of ProcessAddComment method
+		String itemName;
+	double  pOrdered;
+	double manufPrice;
+	double sellingPrice;
+
+//System.out.print("\nEnter name of item to add: ");										//this is my testing to check my input - lra
+	itemName = input.next();
+	pOrdered = input.nextDouble();
+	manufPrice = input.nextDouble();
+	sellingPrice = input.nextDouble();
+	
+	int index = FindIndexOfItem(itemName);
+	if (index != -1) {
+		System.out.printf("\ncannot add, %s already in list!\n", itemName);
+		return;
+		
+	}
+	
+	int itemList = 0;
+	
+	while (itemList <itemNames.length && itemNames [itemList] != null) {
+		itemList++;
+	}
+	
+	if (itemList == itemNames.length) {
+		System.out.println("\nCannot add, the list is full.");
+		return;
+	}
+	itemNames [itemList] = itemName;
+	itemInfo[itemList][1] = pOrdered;
+	itemInfo[itemList][2] = manufPrice;	
+	itemInfo[itemList][3] = sellingPrice;
+	System.out.printf("\n%s has been added successfully!", itemName);
 		 
 	}//end of ProcessAddComment method
 
