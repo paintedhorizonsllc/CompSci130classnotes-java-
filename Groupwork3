@@ -58,7 +58,6 @@ public class inventoryCommands{
 					break;
 				default:
 					System.out.println("Bad command.");
-					input.nextLine(); //////// skip the rest of the line
 					break;
 			} // end switch
 			
